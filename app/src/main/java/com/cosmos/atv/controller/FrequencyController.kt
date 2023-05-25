@@ -55,8 +55,7 @@ class FrequencyController {
     }
 
     fun getFrequency(id: Long): Frequency? {
-        val frequency: Frequency? = realmController.getFrequencyById(id)
-        return frequency;
+        return realmController.getFrequencyById(id);
     }
 
     fun removeFrequencyDatabase() {

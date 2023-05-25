@@ -12,20 +12,22 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.cosmos.atv.R
 import com.cosmos.atv.controller.RealmController
 import com.cosmos.atv.databinding.ActivityMainBinding
+import com.google.android.material.card.MaterialCardView
 import controller.AudioController
 import controller.FrequencyController
 import model.Frequency
 import utils.Constants
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), AudioCallback {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private lateinit var textViewFrequency: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -42,16 +44,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
+        textViewFrequency = findViewById(R.id.frequency)
 
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        audioController.registerCallback(this)
 
-        binding.fab.setOnClickListener { view ->
+        binding.fab.setOnClickListener {
+            audioController.startRecording(this)
+        /*view ->
+
             Snackbar.make(view, "Acorde: " + frequencyController.getFrequency(1)?.chord + "\n" + "Frequencia: " + frequencyController.getFrequency(1)?.frequency, Snackbar.LENGTH_LONG)//"Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAnchorView(R.id.fab)
                 .setAction("Action", null).show()
+             */
         }
     }
 
@@ -69,12 +73,6 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
     }
 
     private fun checkPermissions() {
@@ -106,6 +104,13 @@ class MainActivity : AppCompatActivity() {
                 // A permissão foi negada pelo usuário
                 // Trate o cenário em que a permissão é necessária para a funcionalidade da aplicação
             }
+        }
+    }
+
+    override fun onFrequencyUpdated(frequency: Double) {
+        // Atualize o TextView ou realize outras operações na view
+        this.runOnUiThread {
+            textViewFrequency.text = frequency.toString()
         }
     }
 }
