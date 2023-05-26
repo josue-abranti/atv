@@ -1,6 +1,5 @@
 package com.cosmos.atv.controller
 
-import android.util.Log
 import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
 import io.realm.kotlin.ext.query
@@ -24,8 +23,10 @@ class RealmController {
         realm.writeBlocking  {
             copyToRealm(frequencyObject.apply {
                 id = frequencyObject.id
-                chord = frequencyObject.chord
-                frequency = frequencyObject.frequency
+                pitch = frequencyObject.pitch
+                frequencyMin = frequencyObject.frequencyMin
+                frequencyPitch = frequencyObject.frequencyPitch
+                frequencyMax = frequencyObject.frequencyMax
             })
         }
         realm.close()

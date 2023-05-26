@@ -8,4 +8,5 @@ object Constants {
     const val FORMATO_AUDIO = AudioFormat.ENCODING_PCM_16BIT
     const val CODIGO_REQUISICAO_GRAVACAO = 101
     const val PERMISSION_REQUEST_CODE = 123
+    const val SECONDS_WINDOWS:Long = 1000
 }

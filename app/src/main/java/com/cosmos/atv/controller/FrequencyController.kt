@@ -25,18 +25,24 @@ class FrequencyController {
 
                     if (tagName == "element") {
                         frequency = Frequency()
-                    } else if (tagName == "frequencia") {
+                    } else if (tagName == "frequenciaMinima") {
                         val value = xmlResource.nextText()
-                        frequency.frequency = value.toDouble()
+                        frequency.frequencyMin = value.toDouble()
+                    } else if (tagName == "frequenciaNota") {
+                        val value = xmlResource.nextText()
+                        frequency.frequencyPitch = value.toDouble()
+                    } else if (tagName == "frequenciaMaxima") {
+                        val value = xmlResource.nextText()
+                        frequency.frequencyMax = value.toDouble()
                     } else if (tagName == "nota") {
-                        frequency.chord = xmlResource.nextText()
+                        frequency.pitch = xmlResource.nextText()
                     }
                 } else if (eventType == XmlPullParser.END_TAG) {
                     val tagName = xmlResource.name
 
                     if (tagName == "element") {
                         frequency.id = nextId()
-                        Log.d("", "Id: " + frequency.id.toString() + "\n" + "Acorde: " + frequency.chord + "\n" + "Frequencia: " + frequency.frequency.toString() + "\n")
+                        Log.d("", "Id: " + frequency.id.toString() + "\n" + "Acorde: " + frequency.pitch + "\n" + "Frequencia minima: " + frequency.frequencyMin.toString() + "\n" + "Frequencia nota: " + frequency.frequencyPitch.toString() + "\n" +"Frequencia maxima: " + frequency.frequencyMax.toString() + "\n")
                         realmController.addFrequency(frequency)
                         frequency = Frequency()
                     }

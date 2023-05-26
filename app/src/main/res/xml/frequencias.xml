@@ -2,436 +2,652 @@
 <root>
     <listaFrequencias>
         <element>
-            <frequencia>33</frequencia>
-            <nota>C</nota>
+            <nota>C0</nota>
+            <frequenciaMinima>15.895</frequenciaMinima>
+            <frequenciaNota>16.35</frequenciaNota>
+            <frequenciaMaxima>16.835</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>34.947</frequencia>
-            <nota>C#</nota>
+            <nota>C#0</nota>
+            <frequenciaMinima>16.835</frequenciaMinima>
+            <frequenciaNota>17.32</frequenciaNota>
+            <frequenciaMaxima>17.835</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>37.026</frequencia>
-            <nota>D</nota>
+            <nota>D0</nota>
+            <frequenciaMinima>17.835</frequenciaMinima>
+            <frequenciaNota>18.35</frequenciaNota>
+            <frequenciaMaxima>18.9</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>39.237</frequencia>
-            <nota>D#</nota>
+            <nota>D#0</nota>
+            <frequenciaMinima>18.9</frequenciaMinima>
+            <frequenciaNota>19.45</frequenciaNota>
+            <frequenciaMaxima>20.025</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>41.58</frequencia>
-            <nota>E</nota>
+            <nota>E0</nota>
+            <frequenciaMinima>20.025</frequenciaMinima>
+            <frequenciaNota>20.6</frequenciaNota>
+            <frequenciaMaxima>21.215</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>44.055</frequencia>
-            <nota>F</nota>
+            <nota>F0</nota>
+            <frequenciaMinima>21.215</frequenciaMinima>
+            <frequenciaNota>21.83</frequenciaNota>
+            <frequenciaMaxima>22.475</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>46.662</frequencia>
-            <nota>F#</nota>
+            <nota>F#0</nota>
+            <frequenciaMinima>22.475</frequenciaMinima>
+            <frequenciaNota>23.12</frequenciaNota>
+            <frequenciaMaxima>23.81</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>49.434</frequencia>
-            <nota>G</nota>
+            <nota>G0</nota>
+            <frequenciaMinima>23.81</frequenciaMinima>
+            <frequenciaNota>24.5</frequenciaNota>
+            <frequenciaMaxima>25.23</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>52.371</frequencia>
-            <nota>G#</nota>
+            <nota>G#0</nota>
+            <frequenciaMinima>25.23</frequenciaMinima>
+            <frequenciaNota>25.96</frequenciaNota>
+            <frequenciaMaxima>26.73</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>55.506</frequencia>
-            <nota>A</nota>
+            <nota>A0</nota>
+            <frequenciaMinima>26.73</frequenciaMinima>
+            <frequenciaNota>27.5</frequenciaNota>
+            <frequenciaMaxima>28.32</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>58.806</frequencia>
-            <nota>A#</nota>
+            <nota>A#0</nota>
+            <frequenciaMinima>28.32</frequenciaMinima>
+            <frequenciaNota>29.14</frequenciaNota>
+            <frequenciaMaxima>30.005</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>62.304</frequencia>
-            <nota>B</nota>
+            <nota>B0</nota>
+            <frequenciaMinima>30.005</frequenciaMinima>
+            <frequenciaNota>30.87</frequenciaNota>
+            <frequenciaMaxima>31.785</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>66</frequencia>
-            <nota>C</nota>
+            <nota>C1</nota>
+            <frequenciaMinima>31.785</frequenciaMinima>
+            <frequenciaNota>32.7</frequenciaNota>
+            <frequenciaMaxima>33.675</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>69.894</frequencia>
-            <nota>C#</nota>
+            <nota>C#1</nota>
+            <frequenciaMinima>33.675</frequenciaMinima>
+            <frequenciaNota>34.65</frequenciaNota>
+            <frequenciaMaxima>35.68</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>74.052</frequencia>
-            <nota>D</nota>
+            <nota>D1</nota>
+            <frequenciaMinima>35.68</frequenciaMinima>
+            <frequenciaNota>36.71</frequenciaNota>
+            <frequenciaMaxima>37.8</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>78.474</frequencia>
-            <nota>D#</nota>
+            <nota>D#1</nota>
+            <frequenciaMinima>37.8</frequenciaMinima>
+            <frequenciaNota>38.89</frequenciaNota>
+            <frequenciaMaxima>40.045</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>83.16</frequencia>
-            <nota>E</nota>
+            <nota>E1</nota>
+            <frequenciaMinima>40.045</frequenciaMinima>
+            <frequenciaNota>41.2</frequenciaNota>
+            <frequenciaMaxima>42.425</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>88.11</frequencia>
-            <nota>F</nota>
+            <nota>F1</nota>
+            <frequenciaMinima>42.425</frequenciaMinima>
+            <frequenciaNota>43.65</frequenciaNota>
+            <frequenciaMaxima>44.95</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>93.324</frequencia>
-            <nota>F#</nota>
+            <nota>F#1</nota>
+            <frequenciaMinima>44.95</frequenciaMinima>
+            <frequenciaNota>46.25</frequenciaNota>
+            <frequenciaMaxima>47.625</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>98.868</frequencia>
-            <nota>G</nota>
+            <nota>G1</nota>
+            <frequenciaMinima>47.625</frequenciaMinima>
+            <frequenciaNota>49</frequenciaNota>
+            <frequenciaMaxima>50.455</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>104.74</frequencia>
-            <nota>G#</nota>
+            <nota>G#1</nota>
+            <frequenciaMinima>50.455</frequenciaMinima>
+            <frequenciaNota>51.91</frequenciaNota>
+            <frequenciaMaxima>53.455</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>111.01</frequencia>
-            <nota>A</nota>
+            <nota>A1</nota>
+            <frequenciaMinima>53.455</frequenciaMinima>
+            <frequenciaNota>55</frequenciaNota>
+            <frequenciaMaxima>56.635</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>117.61</frequencia>
-            <nota>A#</nota>
+            <nota>A#1</nota>
+            <frequenciaMinima>56.635</frequenciaMinima>
+            <frequenciaNota>58.27</frequenciaNota>
+            <frequenciaMaxima>60.005</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>124.61</frequencia>
-            <nota>B</nota>
+            <nota>B1</nota>
+            <frequenciaMinima>60.005</frequenciaMinima>
+            <frequenciaNota>61.74</frequenciaNota>
+            <frequenciaMaxima>63.575</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>132</frequencia>
-            <nota>C</nota>
+            <nota>C2</nota>
+            <frequenciaMinima>63.575</frequenciaMinima>
+            <frequenciaNota>65.41</frequenciaNota>
+            <frequenciaMaxima>67.355</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>139.79</frequencia>
-            <nota>C#</nota>
+            <nota>C#2</nota>
+            <frequenciaMinima>67.355</frequenciaMinima>
+            <frequenciaNota>69.3</frequenciaNota>
+            <frequenciaMaxima>71.36</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>148.1</frequencia>
-            <nota>D</nota>
+            <nota>D2</nota>
+            <frequenciaMinima>71.36</frequenciaMinima>
+            <frequenciaNota>73.42</frequenciaNota>
+            <frequenciaMaxima>75.6</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>156.95</frequencia>
-            <nota>D#</nota>
+            <nota>D#2</nota>
+            <frequenciaMinima>75.6</frequenciaMinima>
+            <frequenciaNota>77.78</frequenciaNota>
+            <frequenciaMaxima>80.095</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>166.32</frequencia>
-            <nota>E</nota>
+            <nota>E2</nota>
+            <frequenciaMinima>80.095</frequenciaMinima>
+            <frequenciaNota>82.41</frequenciaNota>
+            <frequenciaMaxima>84.86</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>176.22</frequencia>
-            <nota>F</nota>
+            <nota>F2</nota>
+            <frequenciaMinima>84.86</frequenciaMinima>
+            <frequenciaNota>87.31</frequenciaNota>
+            <frequenciaMaxima>89.905</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>186.65</frequencia>
-            <nota>F#</nota>
+            <nota>F#2</nota>
+            <frequenciaMinima>89.905</frequenciaMinima>
+            <frequenciaNota>92.5</frequenciaNota>
+            <frequenciaMaxima>95.25</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>197.74</frequencia>
-            <nota>G</nota>
+            <nota>G2</nota>
+            <frequenciaMinima>95.25</frequenciaMinima>
+            <frequenciaNota>98</frequenciaNota>
+            <frequenciaMaxima>100.915</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>209.48</frequencia>
-            <nota>G#</nota>
+            <nota>G#2</nota>
+            <frequenciaMinima>100.915</frequenciaMinima>
+            <frequenciaNota>103.83</frequenciaNota>
+            <frequenciaMaxima>106.915</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>222.02</frequencia>
-            <nota>A</nota>
+            <nota>A2</nota>
+            <frequenciaMinima>106.915</frequenciaMinima>
+            <frequenciaNota>110</frequenciaNota>
+            <frequenciaMaxima>113.27</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>235.22</frequencia>
-            <nota>A#</nota>
+            <nota>A#2</nota>
+            <frequenciaMinima>113.27</frequenciaMinima>
+            <frequenciaNota>116.54</frequenciaNota>
+            <frequenciaMaxima>120.005</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>249.22</frequencia>
-            <nota>B</nota>
+            <nota>B2</nota>
+            <frequenciaMinima>120.005</frequenciaMinima>
+            <frequenciaNota>123.47</frequenciaNota>
+            <frequenciaMaxima>127.14</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>264</frequencia>
-            <nota>C</nota>
+            <nota>C3</nota>
+            <frequenciaMinima>127.14</frequenciaMinima>
+            <frequenciaNota>130.81</frequenciaNota>
+            <frequenciaMaxima>134.7</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>279.6</frequencia>
-            <nota>C#</nota>
+            <nota>C#3</nota>
+            <frequenciaMinima>134.7</frequenciaMinima>
+            <frequenciaNota>138.59</frequenciaNota>
+            <frequenciaMaxima>142.71</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>296.2</frequencia>
-            <nota>D</nota>
+            <nota>D3</nota>
+            <frequenciaMinima>142.71</frequenciaMinima>
+            <frequenciaNota>146.83</frequenciaNota>
+            <frequenciaMaxima>151.195</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>313.9</frequencia>
-            <nota>D#</nota>
+            <nota>D#3</nota>
+            <frequenciaMinima>151.195</frequenciaMinima>
+            <frequenciaNota>155.56</frequenciaNota>
+            <frequenciaMaxima>160.185</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>332.6</frequencia>
-            <nota>E</nota>
+            <nota>E3</nota>
+            <frequenciaMinima>160.185</frequenciaMinima>
+            <frequenciaNota>164.81</frequenciaNota>
+            <frequenciaMaxima>169.71</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>352.4</frequencia>
-            <nota>F</nota>
+            <nota>F3</nota>
+            <frequenciaMinima>169.71</frequenciaMinima>
+            <frequenciaNota>174.61</frequenciaNota>
+            <frequenciaMaxima>179.805</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>373.3</frequencia>
-            <nota>F#</nota>
+            <nota>F#3</nota>
+            <frequenciaMinima>179.805</frequenciaMinima>
+            <frequenciaNota>185</frequenciaNota>
+            <frequenciaMaxima>190.5</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>395.5</frequencia>
-            <nota>G</nota>
+            <nota>G3</nota>
+            <frequenciaMinima>190.5</frequenciaMinima>
+            <frequenciaNota>196</frequenciaNota>
+            <frequenciaMaxima>201.825</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>419</frequencia>
-            <nota>G#</nota>
+            <nota>G#3</nota>
+            <frequenciaMinima>201.825</frequenciaMinima>
+            <frequenciaNota>207.65</frequenciaNota>
+            <frequenciaMaxima>213.825</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>444</frequencia>
-            <nota>A</nota>
+            <nota>A3</nota>
+            <frequenciaMinima>213.825</frequenciaMinima>
+            <frequenciaNota>220</frequenciaNota>
+            <frequenciaMaxima>226.54</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>470.4</frequencia>
-            <nota>A#</nota>
+            <nota>A#3</nota>
+            <frequenciaMinima>226.54</frequenciaMinima>
+            <frequenciaNota>233.08</frequenciaNota>
+            <frequenciaMaxima>240.01</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>498.4</frequencia>
-            <nota>B</nota>
+            <nota>B3</nota>
+            <frequenciaMinima>240.01</frequenciaMinima>
+            <frequenciaNota>246.94</frequenciaNota>
+            <frequenciaMaxima>254.285</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>528</frequencia>
-            <nota>C</nota>
+            <nota>C4</nota>
+            <frequenciaMinima>254.285</frequenciaMinima>
+            <frequenciaNota>261.63</frequenciaNota>
+            <frequenciaMaxima>269.405</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>559.15</frequencia>
-            <nota>C#</nota>
+            <nota>C#4</nota>
+            <frequenciaMinima>269.405</frequenciaMinima>
+            <frequenciaNota>277.18</frequenciaNota>
+            <frequenciaMaxima>285.42</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>592.42</frequencia>
-            <nota>D</nota>
+            <nota>D4</nota>
+            <frequenciaMinima>285.42</frequenciaMinima>
+            <frequenciaNota>293.66</frequenciaNota>
+            <frequenciaMaxima>302.395</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>627.79</frequencia>
-            <nota>D#</nota>
+            <nota>D#4</nota>
+            <frequenciaMinima>302.395</frequenciaMinima>
+            <frequenciaNota>311.13</frequenciaNota>
+            <frequenciaMaxima>320.38</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>665.28</frequencia>
-            <nota>E</nota>
+            <nota>E4</nota>
+            <frequenciaMinima>320.38</frequenciaMinima>
+            <frequenciaNota>329.63</frequenciaNota>
+            <frequenciaMaxima>339.43</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>704.88</frequencia>
-            <nota>F</nota>
+            <nota>F4</nota>
+            <frequenciaMinima>339.43</frequenciaMinima>
+            <frequenciaNota>349.23</frequenciaNota>
+            <frequenciaMaxima>359.61</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>746.59</frequencia>
-            <nota>F#</nota>
+            <nota>F#4</nota>
+            <frequenciaMinima>359.61</frequenciaMinima>
+            <frequenciaNota>369.99</frequenciaNota>
+            <frequenciaMaxima>380.995</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>790.94</frequencia>
-            <nota>G</nota>
+            <nota>G4</nota>
+            <frequenciaMinima>380.995</frequenciaMinima>
+            <frequenciaNota>392</frequenciaNota>
+            <frequenciaMaxima>403.65</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>837.94</frequencia>
-            <nota>G#</nota>
+            <nota>G#4</nota>
+            <frequenciaMinima>403.65</frequenciaMinima>
+            <frequenciaNota>415.3</frequenciaNota>
+            <frequenciaMaxima>427.65</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>888.1</frequencia>
-            <nota>A</nota>
+            <nota>A4</nota>
+            <frequenciaMinima>427.65</frequenciaMinima>
+            <frequenciaNota>440</frequenciaNota>
+            <frequenciaMaxima>453.08</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>940.9</frequencia>
-            <nota>A#</nota>
+            <nota>A#4</nota>
+            <frequenciaMinima>453.08</frequenciaMinima>
+            <frequenciaNota>466.16</frequenciaNota>
+            <frequenciaMaxima>480.02</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>996.86</frequencia>
-            <nota>B</nota>
+            <nota>B4</nota>
+            <frequenciaMinima>480.02</frequenciaMinima>
+            <frequenciaNota>493.88</frequenciaNota>
+            <frequenciaMaxima>508.565</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>1056</frequencia>
-            <nota>C</nota>
+            <nota>C5</nota>
+            <frequenciaMinima>508.565</frequenciaMinima>
+            <frequenciaNota>523.25</frequenciaNota>
+            <frequenciaMaxima>538.81</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>1118.3</frequencia>
-            <nota>C#</nota>
+            <nota>C#5</nota>
+            <frequenciaMinima>538.81</frequenciaMinima>
+            <frequenciaNota>554.37</frequenciaNota>
+            <frequenciaMaxima>570.85</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>1184.8</frequencia>
-            <nota>D</nota>
+            <nota>D5</nota>
+            <frequenciaMinima>570.85</frequenciaMinima>
+            <frequenciaNota>587.33</frequenciaNota>
+            <frequenciaMaxima>604.79</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>1255.6</frequencia>
-            <nota>D#</nota>
+            <nota>D#5</nota>
+            <frequenciaMinima>604.79</frequenciaMinima>
+            <frequenciaNota>622.25</frequenciaNota>
+            <frequenciaMaxima>640.75</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>1330.6</frequencia>
-            <nota>E</nota>
+            <nota>E5</nota>
+            <frequenciaMinima>640.75</frequenciaMinima>
+            <frequenciaNota>659.25</frequenciaNota>
+            <frequenciaMaxima>678.855</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>1409.8</frequencia>
-            <nota>F</nota>
+            <nota>F5</nota>
+            <frequenciaMinima>678.855</frequenciaMinima>
+            <frequenciaNota>698.46</frequenciaNota>
+            <frequenciaMaxima>719.225</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>1493.2</frequencia>
-            <nota>F#</nota>
+            <nota>F#5</nota>
+            <frequenciaMinima>719.225</frequenciaMinima>
+            <frequenciaNota>739.99</frequenciaNota>
+            <frequenciaMaxima>761.99</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>1581.9</frequencia>
-            <nota>G</nota>
+            <nota>G5</nota>
+            <frequenciaMinima>761.99</frequenciaMinima>
+            <frequenciaNota>783.99</frequenciaNota>
+            <frequenciaMaxima>807.3</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>1675.9</frequencia>
-            <nota>G#</nota>
+            <nota>G#5</nota>
+            <frequenciaMinima>807.3</frequenciaMinima>
+            <frequenciaNota>830.61</frequenciaNota>
+            <frequenciaMaxima>855.305</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>1776.2</frequencia>
-            <nota>A</nota>
+            <nota>A5</nota>
+            <frequenciaMinima>855.305</frequenciaMinima>
+            <frequenciaNota>880</frequenciaNota>
+            <frequenciaMaxima>906.165</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>1881.8</frequencia>
-            <nota>A#</nota>
+            <nota>A#5</nota>
+            <frequenciaMinima>906.165</frequenciaMinima>
+            <frequenciaNota>932.33</frequenciaNota>
+            <frequenciaMaxima>960.05</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>1993.7</frequencia>
-            <nota>B</nota>
+            <nota>B5</nota>
+            <frequenciaMinima>960.05</frequenciaMinima>
+            <frequenciaNota>987.77</frequenciaNota>
+            <frequenciaMaxima>1017.135</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>2112</frequencia>
-            <nota>C</nota>
+            <nota>C6</nota>
+            <frequenciaMinima>1017.135</frequenciaMinima>
+            <frequenciaNota>1046.5</frequenciaNota>
+            <frequenciaMaxima>1077.615</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>2236.6</frequencia>
-            <nota>C#</nota>
+            <nota>C#6</nota>
+            <frequenciaMinima>1077.615</frequenciaMinima>
+            <frequenciaNota>1108.73</frequenciaNota>
+            <frequenciaMaxima>1141.695</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>2369.7</frequencia>
-            <nota>D</nota>
+            <nota>D6</nota>
+            <frequenciaMinima>1141.695</frequenciaMinima>
+            <frequenciaNota>1174.66</frequenciaNota>
+            <frequenciaMaxima>1209.585</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>2511.2</frequencia>
-            <nota>D#</nota>
+            <nota>D#6</nota>
+            <frequenciaMinima>1209.585</frequenciaMinima>
+            <frequenciaNota>1244.51</frequenciaNota>
+            <frequenciaMaxima>1281.51</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>2661.1</frequencia>
-            <nota>E</nota>
+            <nota>E6</nota>
+            <frequenciaMinima>1281.51</frequenciaMinima>
+            <frequenciaNota>1318.51</frequenciaNota>
+            <frequenciaMaxima>1357.71</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>2819.5</frequencia>
-            <nota>F</nota>
+            <nota>F6</nota>
+            <frequenciaMinima>1357.71</frequenciaMinima>
+            <frequenciaNota>1396.91</frequenciaNota>
+            <frequenciaMaxima>1438.445</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>2986.4</frequencia>
-            <nota>F#</nota>
+            <nota>F#6</nota>
+            <frequenciaMinima>1438.445</frequenciaMinima>
+            <frequenciaNota>1479.98</frequenciaNota>
+            <frequenciaMaxima>1523.98</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>3163.8</frequencia>
-            <nota>G</nota>
+            <nota>G6</nota>
+            <frequenciaMinima>1523.98</frequenciaMinima>
+            <frequenciaNota>1567.98</frequenciaNota>
+            <frequenciaMaxima>1614.6</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>3351.7</frequencia>
-            <nota>G#</nota>
+            <nota>G#6</nota>
+            <frequenciaMinima>1614.6</frequenciaMinima>
+            <frequenciaNota>1661.22</frequenciaNota>
+            <frequenciaMaxima>1710.61</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>3552.4</frequencia>
-            <nota>A</nota>
+            <nota>A6</nota>
+            <frequenciaMinima>1710.61</frequenciaMinima>
+            <frequenciaNota>1760</frequenciaNota>
+            <frequenciaMaxima>1812.33</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>3763.6</frequencia>
-            <nota>A#</nota>
+            <nota>A#6</nota>
+            <frequenciaMinima>1812.33</frequenciaMinima>
+            <frequenciaNota>1864.66</frequenciaNota>
+            <frequenciaMaxima>1920.095</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>3987.5</frequencia>
-            <nota>B</nota>
+            <nota>B6</nota>
+            <frequenciaMinima>1920.095</frequenciaMinima>
+            <frequenciaNota>1975.53</frequenciaNota>
+            <frequenciaMaxima>2034.265</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>4224</frequencia>
-            <nota>C</nota>
+            <nota>C7</nota>
+            <frequenciaMinima>2034.265</frequenciaMinima>
+            <frequenciaNota>2093</frequenciaNota>
+            <frequenciaMaxima>2155.23</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>4473.2</frequencia>
-            <nota>C#</nota>
+            <nota>C#7</nota>
+            <frequenciaMinima>2155.23</frequenciaMinima>
+            <frequenciaNota>2217.46</frequenciaNota>
+            <frequenciaMaxima>2283.39</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>4739.3</frequencia>
-            <nota>D</nota>
+            <nota>D7</nota>
+            <frequenciaMinima>2283.39</frequenciaMinima>
+            <frequenciaNota>2349.32</frequenciaNota>
+            <frequenciaMaxima>2419.17</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>5022.3</frequencia>
-            <nota>D#</nota>
+            <nota>D#7</nota>
+            <frequenciaMinima>2419.17</frequenciaMinima>
+            <frequenciaNota>2489.02</frequenciaNota>
+            <frequenciaMaxima>2563.02</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>5322.2</frequencia>
-            <nota>E</nota>
+            <nota>E7</nota>
+            <frequenciaMinima>2563.02</frequenciaMinima>
+            <frequenciaNota>2637.02</frequenciaNota>
+            <frequenciaMaxima>2715.425</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>5639</frequencia>
-            <nota>F</nota>
+            <nota>F7</nota>
+            <frequenciaMinima>2715.425</frequenciaMinima>
+            <frequenciaNota>2793.83</frequenciaNota>
+            <frequenciaMaxima>2876.895</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>5972.7</frequencia>
-            <nota>F#</nota>
+            <nota>F#7</nota>
+            <frequenciaMinima>2876.895</frequenciaMinima>
+            <frequenciaNota>2959.96</frequenciaNota>
+            <frequenciaMaxima>3047.96</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>6327.6</frequencia>
-            <nota>G</nota>
+            <nota>G7</nota>
+            <frequenciaMinima>3047.96</frequenciaMinima>
+            <frequenciaNota>3135.96</frequenciaNota>
+            <frequenciaMaxima>3229.2</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>6703.5</frequencia>
-            <nota>G#</nota>
+            <nota>G#7</nota>
+            <frequenciaMinima>3229.2</frequenciaMinima>
+            <frequenciaNota>3322.44</frequenciaNota>
+            <frequenciaMaxima>3421.22</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>7104.8</frequencia>
-            <nota>A</nota>
+            <nota>A7</nota>
+            <frequenciaMinima>3421.22</frequenciaMinima>
+            <frequenciaNota>3520</frequenciaNota>
+            <frequenciaMaxima>3624.655</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>7527.2</frequencia>
-            <nota>A#</nota>
+            <nota>A#7</nota>
+            <frequenciaMinima>3624.655</frequenciaMinima>
+            <frequenciaNota>3729.31</frequenciaNota>
+            <frequenciaMaxima>3840.19</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>7974.9</frequencia>
-            <nota>B</nota>
+            <nota>B7</nota>
+            <frequenciaMinima>3840.19</frequenciaMinima>
+            <frequenciaNota>3951.07</frequenciaNota>
+            <frequenciaMaxima>4068.54</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>8448</frequencia>
-            <nota>C</nota>
+            <nota>C8</nota>
+            <frequenciaMinima>4068.54</frequenciaMinima>
+            <frequenciaNota>4186.01</frequenciaNota>
+            <frequenciaMaxima>4310.465</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>8946.4</frequencia>
-            <nota>C#</nota>
+            <nota>C#8</nota>
+            <frequenciaMinima>4310.465</frequenciaMinima>
+            <frequenciaNota>4434.92</frequenciaNota>
+            <frequenciaMaxima>4566.775</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>9478.7</frequencia>
-            <nota>D</nota>
+            <nota>D8</nota>
+            <frequenciaMinima>4566.775</frequenciaMinima>
+            <frequenciaNota>4698.63</frequenciaNota>
+            <frequenciaMaxima>4838.33</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>10045</frequencia>
-            <nota>D#</nota>
+            <nota>D#8</nota>
+            <frequenciaMinima>4838.33</frequenciaMinima>
+            <frequenciaNota>4978.03</frequenciaNota>
+            <frequenciaMaxima>5126.035</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>10644</frequencia>
-            <nota>E</nota>
+            <nota>E8</nota>
+            <frequenciaMinima>5126.035</frequenciaMinima>
+            <frequenciaNota>5274.04</frequenciaNota>
+            <frequenciaMaxima>5430.845</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>11278</frequencia>
-            <nota>F</nota>
+            <nota>F8</nota>
+            <frequenciaMinima>5430.845</frequenciaMinima>
+            <frequenciaNota>5587.65</frequenciaNota>
+            <frequenciaMaxima>5753.78</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>11945</frequencia>
-            <nota>F#</nota>
+            <nota>F#8</nota>
+            <frequenciaMinima>5753.78</frequenciaMinima>
+            <frequenciaNota>5919.91</frequenciaNota>
+            <frequenciaMaxima>6095.92</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>12655</frequencia>
-            <nota>G</nota>
+            <nota>G8</nota>
+            <frequenciaMinima>6095.92</frequenciaMinima>
+            <frequenciaNota>6271.93</frequenciaNota>
+            <frequenciaMaxima>6458.405</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>13407</frequencia>
-            <nota>G#</nota>
+            <nota>G#8</nota>
+            <frequenciaMinima>6458.405</frequenciaMinima>
+            <frequenciaNota>6644.88</frequenciaNota>
+            <frequenciaMaxima>6842.44</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>14210</frequencia>
-            <nota>A</nota>
+            <nota>A8</nota>
+            <frequenciaMinima>6842.44</frequenciaMinima>
+            <frequenciaNota>7040</frequenciaNota>
+            <frequenciaMaxima>7249.31</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>15054</frequencia>
-            <nota>A#</nota>
+            <nota>A#8</nota>
+            <frequenciaMinima>7249.31</frequenciaMinima>
+            <frequenciaNota>7458.62</frequenciaNota>
+            <frequenciaMaxima>7680.375</frequenciaMaxima>
         </element>
         <element>
-            <frequencia>15950</frequencia>
-            <nota>B</nota>
+            <nota>B8</nota>
+            <frequenciaMinima>7680.375</frequenciaMinima>
+            <frequenciaNota>7902.13</frequenciaNota>
+            <frequenciaMaxima>8137.075</frequenciaMaxima>
         </element>
     </listaFrequencias>
 </root>

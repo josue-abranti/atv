@@ -6,13 +6,16 @@ import android.content.pm.PackageManager
 import android.media.AudioRecord
 import android.media.MediaRecorder
 import android.media.audiofx.NoiseSuppressor
+import android.util.Log
 import androidx.core.app.ActivityCompat
 import com.cosmos.atv.view.AudioCallback
+import org.jtransforms.fft.DoubleFFT_1D
 import utils.Constants
 import kotlin.concurrent.thread
-import org.apache.commons.math3.complex.Complex
-import org.apache.commons.math3.transform.FastFourierTransformer
-import org.jtransforms.fft.DoubleFFT_1D
+import kotlin.math.PI
+import kotlin.math.abs
+import kotlin.math.atan2
+import kotlin.math.cos
 
 class AudioController {
 
@@ -65,19 +68,19 @@ class AudioController {
 
             while (true) {
                 val buffer = ShortArray(bufferSize)
-                val audio = audioRecord?.read(buffer, 0, bufferSize)
+                audioRecord?.read(buffer, 0, bufferSize)
 
                 // Calcula a frequência média com base no áudio capturado
 
                 val frequenciaMedia = calculateFundamentalFrequency(buffer, sampleRate)
 
-                //val frequenciaMedia = calculateAverageFrequency(buffer)
+                Log.d("", "frequenciaMedia: $frequenciaMedia\n")
 
                 // Update
                 audioCallback?.onFrequencyUpdated(frequenciaMedia)
 
                 segundos++
-                Thread.sleep(1000)
+                Thread.sleep(Constants.SECONDS_WINDOWS)
             }
 
             audioRecord?.stop()
@@ -86,15 +89,6 @@ class AudioController {
             // Liberar o NoiseSuppressor
             noiseSuppressor?.release()
         }
-    }
-
-    private fun calculateAverageFrequency(buffer: ShortArray): Double {
-        var sum = 0.0
-        for (value in buffer) {
-            sum += value
-        }
-        val average = sum / buffer.size.toDouble()
-        return average
     }
 
     fun registerCallback(callback: AudioCallback) {
@@ -106,9 +100,12 @@ class AudioController {
         val bufferSize = fftSize / 2
         val buffer = DoubleArray(bufferSize)
 
-        // Converter os valores de áudio para double
+        // Pré-processamento do sinal
+        val processedAudio = preprocessSignal(audio)
+
+        // Converter os valores de áudio processado para double e aplicar a janela de Hamming
         for (i in 0 until bufferSize) {
-            buffer[i] = audio[i].toDouble()
+            buffer[i] = processedAudio[i].toDouble() * hammingWindow(i, bufferSize)
         }
 
         // Realizar a transformada de Fourier
@@ -121,7 +118,46 @@ class AudioController {
         // Calcular a frequência fundamental com base no índice do pico dominante e a taxa de amostragem
         val fundamentalFrequency = peakIndex * sampleRate.toDouble() / fftSize
 
+        // Ajuste fino pela fase
+        //  val phaseAdjustment = calculatePhaseAdjustment(buffer, peakIndex)
+        // val adjustedFrequency = fundamentalFrequency + phaseAdjustment
+
         return fundamentalFrequency
+    }
+
+    private fun preprocessSignal(audio: ShortArray): ShortArray {
+        // Aplicar técnicas de pré-processamento, como filtragem e normalização, ao sinal de áudio
+        val filteredAudio = applyFilter(audio)
+        val normalizedAudio = applyNormalization(filteredAudio)
+        return normalizedAudio
+    }
+
+    private fun applyFilter(audio: ShortArray): ShortArray {
+        // Aplicar o filtro desejado ao sinal de áudio
+        // Implemente aqui a lógica do filtro que você deseja utilizar
+        return audio // Retornar o áudio filtrado
+    }
+
+    private fun applyNormalization(audio: ShortArray): ShortArray {
+        // Encontrar o valor máximo absoluto no sinal de áudio
+        var maxAbsValue = 0
+
+        for (value in audio) {
+            val absValue = abs(value.toInt())
+            if (absValue > maxAbsValue) {
+                maxAbsValue = absValue
+            }
+        }
+
+        // Normalizar o sinal de áudio dividindo cada valor pelo valor máximo absoluto
+        val normalizedAudio = ShortArray(audio.size)
+
+        for (i in audio.indices) {
+            normalizedAudio[i] =
+                (audio[i].toDouble() / maxAbsValue.toDouble() * Short.MAX_VALUE).toInt().toShort()
+        }
+
+        return normalizedAudio
     }
 
     private fun findPeakIndex(buffer: DoubleArray): Int {
@@ -137,5 +173,15 @@ class AudioController {
         }
 
         return peakIndex
+    }
+
+    private fun hammingWindow(index: Int, size: Int): Double {
+        return 0.54 - 0.46 * cos(2 * PI * index / (size - 1))
+    }
+
+    private fun calculatePhaseAdjustment(buffer: DoubleArray, peakIndex: Int): Double {
+        val real = buffer[2 * peakIndex]
+        val imag = buffer[2 * peakIndex + 1]
+        return atan2(imag, real) / (2 * PI)
     }
 }
