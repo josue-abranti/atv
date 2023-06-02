@@ -32,16 +32,21 @@
         app:layout_constraintHorizontal_bias="0.5">
 
         <TextView
+            android:id="@+id/frequencyLeft"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Parte 1" />
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="100sp"
+            android:text="&lt;" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="200dp"
             android:layout_height="200dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -57,8 +62,9 @@
                     android:id="@+id/frequency"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Frequência"
-                    android:textSize="16sp"
+                    android:text="0 Hz"
+                    android:textAlignment="center"
+                    android:textSize="33sp"
                     android:padding="16dp"/>
 
             </LinearLayout>
@@ -66,10 +72,13 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
+            android:id="@+id/frequencyRight"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
             android:layout_weight="1"
-            android:text="Parte 1" />
+            android:textSize="100sp"
+            android:text="&gt;" />
 
     </LinearLayout>
 

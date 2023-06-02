@@ -3,59 +3,57 @@ package com.cosmos.atv.view
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.TextView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.cosmos.atv.R
-import com.cosmos.atv.controller.RealmController
 import com.cosmos.atv.databinding.ActivityMainBinding
-import com.google.android.material.card.MaterialCardView
-import controller.AudioController
-import controller.FrequencyController
-import model.Frequency
+import com.cosmos.atv.interfaces.FrequencyContract
+import com.cosmos.atv.presenter.FrequencyPresenter
+import com.cosmos.atv.model.Frequency
 import utils.Constants
 
-class MainActivity : AppCompatActivity(), AudioCallback {
+class MainActivity : AppCompatActivity(), FrequencyContract.View {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var textViewFrequency: TextView
+    private lateinit var textViewFrequencyLeft: TextView
+    private lateinit var textViewFrequencyRight: TextView
+    private lateinit var frequencyPresenter: FrequencyPresenter
+    private var buttonState: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
 
-        checkPermissions()
-
-        val frequencyController = FrequencyController()
-        var audioController = AudioController()
-
-        frequencyController.removeFrequencyDatabase()
-        frequencyController.addFrequenciesFromXml(this)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         textViewFrequency = findViewById(R.id.frequency)
+        textViewFrequencyLeft = findViewById(R.id.frequencyLeft)
+        textViewFrequencyRight = findViewById(R.id.frequencyRight)
 
-        audioController.registerCallback(this)
+        checkPermissions()
+
+        this.frequencyPresenter = FrequencyPresenter(this, this)
+
+        frequencyPresenter.removeFrequencyDatabase()
+
+        frequencyPresenter.addFrequenciesFromXml()
 
         binding.fab.setOnClickListener {
-            audioController.startRecording(this)
-        /*view ->
+            // Alterna o estado do botão ao ser clicado
+            buttonState = !buttonState
+            if (buttonState) {
+                frequencyPresenter.onButtonClickOn()
+            } else {
+                frequencyPresenter.onButtonClickOff()
+            }
 
-            Snackbar.make(view, "Acorde: " + frequencyController.getFrequency(1)?.chord + "\n" + "Frequencia: " + frequencyController.getFrequency(1)?.frequency, Snackbar.LENGTH_LONG)//"Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAnchorView(R.id.fab)
-                .setAction("Action", null).show()
-             */
         }
     }
 
@@ -107,10 +105,27 @@ class MainActivity : AppCompatActivity(), AudioCallback {
         }
     }
 
-    override fun onFrequencyUpdated(frequency: Double) {
-        // Atualize o TextView ou realize outras operações na view
+    override fun updateFrequency(frequency: Frequency, frequencyValue: Double, color: Int, position: Constants.Position) {
         this.runOnUiThread {
-            textViewFrequency.text = frequency.toString()
+            textViewFrequency.text = frequencyValue.toString() + "Hz\n" + frequency.frequencyPitch.toString() + "Hz\n"+ frequency.pitch
+            textViewFrequencyLeft.setTextColor(color)
+            textViewFrequencyRight.setTextColor(color)
+            when (position) {
+                Constants.Position.RIGHT -> {
+                    textViewFrequencyRight.visibility = View.VISIBLE
+                    textViewFrequencyLeft.visibility = View.INVISIBLE
+                }
+                Constants.Position.LEFT -> {
+                    textViewFrequencyRight.visibility = View.INVISIBLE
+                    textViewFrequencyLeft.visibility = View.VISIBLE
+                }
+                Constants.Position.CENTER -> {
+                    textViewFrequencyRight.visibility = View.INVISIBLE
+                    textViewFrequencyRight.visibility = View.INVISIBLE
+                }
+            }
         }
     }
+
+
 }

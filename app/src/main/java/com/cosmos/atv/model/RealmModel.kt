@@ -1,12 +1,11 @@
-package com.cosmos.atv.controller
+package com.cosmos.atv.model
 
 import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
 import io.realm.kotlin.ext.query
 import io.realm.kotlin.query.RealmResults
-import model.Frequency
 
-class RealmController {
+class RealmModel {
 
     var idFrequency: Long = 0
 
@@ -32,13 +31,17 @@ class RealmController {
         realm.close()
     }
 
-    fun getFrequencyById(id: Long): Frequency? {
+    fun getPitchByFrequency(frequency: Double): Frequency? {
 
         var realm = Realm.open(RealmConfig.config)
 
-        val frequency: RealmResults<Frequency> = realm.query<Frequency>("id == $0", id).find()
+        val frequency: RealmResults<Frequency> = realm.query<Frequency>("frequencyMin < $0 AND frequencyMax > $0", frequency).find()
 
-        return frequency[0]
+        if(frequency == null) {
+            return Frequency()
+        } else {
+            return frequency[0]
+        }
     }
 
     fun getMaxIdFrequency(): Long? {

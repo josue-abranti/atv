@@ -1,99 +1,12 @@
-package controller
+package com.cosmos.atv.model
 
-import android.Manifest
-import android.app.Activity
-import android.content.pm.PackageManager
-import android.media.AudioRecord
-import android.media.MediaRecorder
-import android.media.audiofx.NoiseSuppressor
-import android.util.Log
-import androidx.core.app.ActivityCompat
-import com.cosmos.atv.view.AudioCallback
 import org.jtransforms.fft.DoubleFFT_1D
-import utils.Constants
-import kotlin.concurrent.thread
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.atan2
 import kotlin.math.cos
 
-class AudioController {
-
-    private var audioCallback: AudioCallback? = null
-    private var audioRecord: AudioRecord? = null
-    private var noiseSuppressor: NoiseSuppressor? = null
-
-    fun startRecording(context: Activity) {
-        // Configurações da gravação de áudio
-        val sampleRate = Constants.TAXA_AMOSTRAGEM // Taxa de amostragem em Hz
-        val channelConfig = Constants.CONFIGURACAO_CANAL // Configuração de canal (mono)
-        val audioFormat = Constants.FORMATO_AUDIO // Formato de áudio (16 bits por amostra)
-        val bufferSize = AudioRecord.getMinBufferSize(sampleRate, channelConfig, audioFormat)
-
-        // Inicialização do AudioRecord
-        if (ActivityCompat.checkSelfPermission(
-                context,
-                Manifest.permission.RECORD_AUDIO
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return
-        }
-        audioRecord = AudioRecord(
-            MediaRecorder.AudioSource.MIC,
-            sampleRate,
-            channelConfig,
-            audioFormat,
-            bufferSize
-        )
-
-        val idSessaoAudio = audioRecord?.audioSessionId
-        noiseSuppressor = idSessaoAudio?.let { NoiseSuppressor.create(it) }
-
-        if (NoiseSuppressor.isAvailable() && noiseSuppressor != null) {
-            // Habilitar o cancelamento de ruído
-            noiseSuppressor?.enabled = true
-        }
-
-        thread {
-            audioRecord?.startRecording()
-
-            var segundos = 0
-
-            while (true) {
-                val buffer = ShortArray(bufferSize)
-                audioRecord?.read(buffer, 0, bufferSize)
-
-                // Calcula a frequência média com base no áudio capturado
-
-                val frequenciaMedia = calculateFundamentalFrequency(buffer, sampleRate)
-
-                Log.d("", "frequenciaMedia: $frequenciaMedia\n")
-
-                // Update
-                audioCallback?.onFrequencyUpdated(frequenciaMedia)
-
-                segundos++
-                Thread.sleep(Constants.SECONDS_WINDOWS)
-            }
-
-            audioRecord?.stop()
-            audioRecord?.release()
-
-            // Liberar o NoiseSuppressor
-            noiseSuppressor?.release()
-        }
-    }
-
-    fun registerCallback(callback: AudioCallback) {
-        audioCallback = callback
-    }
+class FFTModel() {
 
     fun calculateFundamentalFrequency(audio: ShortArray, sampleRate: Int): Double {
         val fftSize = audio.size * 2
