@@ -32,10 +32,10 @@ class FFTModel() {
         val fundamentalFrequency = peakIndex * sampleRate.toDouble() / fftSize
 
         // Ajuste fino pela fase
-        //  val phaseAdjustment = calculatePhaseAdjustment(buffer, peakIndex)
-        // val adjustedFrequency = fundamentalFrequency + phaseAdjustment
+        val phaseAdjustment = calculatePhaseAdjustment(buffer, peakIndex)
+        val adjustedFrequency = fundamentalFrequency + phaseAdjustment
 
-        return fundamentalFrequency
+        return adjustedFrequency
     }
 
     private fun preprocessSignal(audio: ShortArray): ShortArray {

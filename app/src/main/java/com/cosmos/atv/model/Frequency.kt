@@ -4,11 +4,20 @@ import io.realm.kotlin.types.RealmObject
 import io.realm.kotlin.types.annotations.PrimaryKey
 
 open class Frequency : RealmObject {
+
     @PrimaryKey
     var id: Long = 0
     var pitch: String = ""
     var frequencyMin = 0.0
     var frequencyPitch: Double = 0.0
     var frequencyMax: Double = 0.0
+
+    operator fun compareTo(other: Double): Int {
+        return when {
+            frequencyPitch < other -> -1
+            frequencyPitch > other -> 1
+            else -> 0
+        }
+    }
 }
 

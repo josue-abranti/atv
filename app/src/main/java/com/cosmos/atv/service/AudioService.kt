@@ -1,5 +1,6 @@
 package com.cosmos.atv.service
 
+import YINModel
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
@@ -17,6 +18,7 @@ class AudioService {
     private var audioRecord: AudioRecord? = null
     private var noiseSuppressor: NoiseSuppressor? = null
     private var fftModel = FFTModel()
+    private var yinModel = YINModel()
     private var callback: AudioServiceCallback? = null
 
     fun setCallback(callback: AudioServiceCallback) {
@@ -73,7 +75,8 @@ class AudioService {
 
                 // Calcula a frequência média com base no áudio capturado
 
-                val frequency = fftModel.calculateFundamentalFrequency(buffer, sampleRate)
+                //val frequency = fftModel.calculateFundamentalFrequency(buffer, sampleRate)
+                val frequency = yinModel.detectPitch(buffer, sampleRate, bufferSize)
 
                 callback!!.onAudioDataReceived(frequency)
 

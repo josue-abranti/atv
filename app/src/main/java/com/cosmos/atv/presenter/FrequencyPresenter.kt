@@ -9,20 +9,18 @@ import com.cosmos.atv.utils.Utils
 import com.cosmos.atv.model.Frequency
 import utils.Constants
 
-class FrequencyPresenter: FrequencyContract.Presenter, AudioServiceCallback {
+class FrequencyPresenter(view: FrequencyContract.View, context: Context) : FrequencyContract.Presenter, AudioServiceCallback {
 
     private var frequencyModel: FrequencyController? = null
-    private var context: Context? = null
-    private var view: FrequencyContract.View? = null
+    private var context: Context? = context
+    private var view: FrequencyContract.View? = view
     private val audioService = AudioService()
 
     init {
         audioService.setCallback(this)
     }
 
-    constructor (view: FrequencyContract.View, context: Context) {
-        this.context = context;
-        this.view = view
+    init {
         this.frequencyModel = FrequencyController()
     }
 
@@ -42,20 +40,20 @@ class FrequencyPresenter: FrequencyContract.Presenter, AudioServiceCallback {
         this.stopRecording()
     }
 
-    override fun receiveFrequencyData(frequencyValue: Double) {
-        var frequency: Frequency? = frequencyModel?.getPitchByFrequency(frequencyValue)
-        if (frequency != null) {
-            if(frequencyValue < frequency.frequencyPitch) {
-                view!!.updateFrequency(frequency, frequencyValue, fontColor(frequencyValue.toFloat()), Constants.Position.LEFT)
-            } else if(frequencyValue > frequency.frequencyPitch) {
-                view!!.updateFrequency(frequency, frequencyValue, fontColor(frequencyValue.toFloat()), Constants.Position.RIGHT)
+    override fun receiveFrequencyData(frequency: Double) {
+        val frequencyResult: Frequency? = frequencyModel?.getPitchByFrequency(frequency)
+        if (frequencyResult != null) {
+            if(frequency.compareTo(frequency) == -1) {
+                view!!.updateFrequency(frequencyResult, frequency, fontColor(frequency.toFloat()), Constants.Position.LEFT)
+            } else if(frequency.compareTo(frequency) == 1) {
+                view!!.updateFrequency(frequencyResult, frequency, fontColor(frequency.toFloat()), Constants.Position.RIGHT)
             } else {
-                view!!.updateFrequency(frequency, frequencyValue, 0, Constants.Position.CENTER)
+                view!!.updateFrequency(frequencyResult, frequency, 0, Constants.Position.CENTER)
             }
         }
     }
 
-    fun fontColor(percentage: Float): Int {
+    private fun fontColor(percentage: Float): Int {
         return Utils.rgbToColorHex(percentage, percentage, percentage)
     }
 
@@ -65,10 +63,6 @@ class FrequencyPresenter: FrequencyContract.Presenter, AudioServiceCallback {
 
     fun stopRecording() {
         audioService.stopAudioRecording()
-    }
-
-    fun stopRecording(context: Context) {
-        audioService.startAudioRecording(context)
     }
 
     override fun onAudioDataReceived(frequencyValue: Double) {

@@ -7,7 +7,7 @@ import org.xmlpull.v1.XmlPullParser
 
 class FrequencyController {
 
-    var realmModel = RealmModel()
+    private var realmModel = RealmModel()
 
     fun addFrequenciesFromXml(context: Context?) {
         val xmlResource = context?.resources?.getXml(R.xml.frequencias)
@@ -18,31 +18,42 @@ class FrequencyController {
 
             while (eventType != XmlPullParser.END_DOCUMENT) {
 
-                if (eventType == XmlPullParser.START_TAG) {
-                    val tagName = xmlResource?.name
+                when (eventType) {
+                    XmlPullParser.START_TAG -> {
 
-                    if (tagName == "element") {
-                        frequency = Frequency()
-                    } else if (tagName == "frequenciaMinima") {
-                        val value = xmlResource?.nextText()
-                        frequency.frequencyMin = value?.toDouble() ?: 0.0
-                    } else if (tagName == "frequenciaNota") {
-                        val value = xmlResource?.nextText()
-                        frequency.frequencyPitch = value?.toDouble() ?: 0.0
-                    } else if (tagName == "frequenciaMaxima") {
-                        val value = xmlResource?.nextText()
-                        frequency.frequencyMax = value?.toDouble() ?: 0.0
-                    } else if (tagName == "nota") {
-                        frequency.pitch = xmlResource?.nextText() ?: ""
+                        when (xmlResource?.name) {
+                            "element" -> {
+                                frequency = Frequency()
+                            }
+                            "frequenciaMinima" -> {
+                                val value = xmlResource.nextText()
+                                frequency.frequencyMin = value?.toDouble() ?: 0.0
+                            }
+                            "frequenciaNota" -> {
+                                val value = xmlResource.nextText()
+                                frequency.frequencyPitch = value?.toDouble() ?: 0.0
+                            }
+                            "frequenciaMaxima" -> {
+                                val value = xmlResource.nextText()
+                                frequency.frequencyMax = value?.toDouble() ?: 0.0
+                            }
+                            "nota" -> {
+                                frequency.pitch = xmlResource.nextText() ?: ""
+                            }
+                        }
                     }
-                } else if (eventType == XmlPullParser.END_TAG) {
-                    val tagName = xmlResource?.name
+                    XmlPullParser.END_TAG -> {
+                        val tagName = xmlResource?.name
 
-                    if (tagName == "element") {
-                        frequency.id = nextId()
-                        Log.d("", "Id: " + frequency.id.toString() + "\n" + "Acorde: " + frequency.pitch + "\n" + "Frequencia minima: " + frequency.frequencyMin.toString() + "\n" + "Frequencia nota: " + frequency.frequencyPitch.toString() + "\n" +"Frequencia maxima: " + frequency.frequencyMax.toString() + "\n")
-                        realmModel.addFrequency(frequency)
-                        frequency = Frequency()
+                        if (tagName == "element") {
+                            frequency.id = nextId()
+                            Log.d(
+                                "",
+                                "Id: ${frequency.id}\nAcorde: ${frequency.pitch}\nFrequencia minima: ${frequency.frequencyMin}\nFrequencia nota: ${frequency.frequencyPitch}\nFrequencia maxima: ${frequency.frequencyMax}\n"
+                            )
+                            realmModel.addFrequency(frequency)
+                            frequency = Frequency()
+                        }
                     }
                 }
 
@@ -53,13 +64,12 @@ class FrequencyController {
         }
     }
 
-    fun nextId(): Long {
-        val nextId: Long = realmModel.getMaxIdFrequency()!!
-        return nextId
+    private fun nextId(): Long {
+        return realmModel.getMaxIdFrequency()
     }
 
-    fun getPitchByFrequency(frequency: Double): Frequency? {
-        return realmModel.getPitchByFrequency(frequency);
+    fun getPitchByFrequency(frequency: Double): Frequency {
+        return realmModel.getPitchByFrequency(frequency)
     }
 
     fun removeFrequencyDatabase() {

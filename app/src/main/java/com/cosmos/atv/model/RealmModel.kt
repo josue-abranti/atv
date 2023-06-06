@@ -18,7 +18,7 @@ class RealmModel {
     }
 
     fun addFrequency(frequencyObject: Frequency) {
-        var realm = Realm.open(RealmConfig.config)
+        val realm = Realm.open(RealmConfig.config)
         realm.writeBlocking  {
             copyToRealm(frequencyObject.apply {
                 id = frequencyObject.id
@@ -31,20 +31,17 @@ class RealmModel {
         realm.close()
     }
 
-    fun getPitchByFrequency(frequency: Double): Frequency? {
+    fun getPitchByFrequency(frequency: Double): Frequency {
 
-        var realm = Realm.open(RealmConfig.config)
+        val realm = Realm.open(RealmConfig.config)
 
-        val frequency: RealmResults<Frequency> = realm.query<Frequency>("frequencyMin < $0 AND frequencyMax > $0", frequency).find()
+        val frequencyResult: RealmResults<Frequency> = realm.query<Frequency>("frequencyMin < $0 AND frequencyMax > $0", frequency).find()
 
-        if(frequency == null) {
-            return Frequency()
-        } else {
-            return frequency[0]
-        }
+        return if(frequencyResult.isEmpty()) Frequency()
+        else frequencyResult[0]
     }
 
-    fun getMaxIdFrequency(): Long? {
+    fun getMaxIdFrequency(): Long {
         this.idFrequency++
         return this.idFrequency
     }

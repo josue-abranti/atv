@@ -17,6 +17,7 @@ import com.cosmos.atv.interfaces.FrequencyContract
 import com.cosmos.atv.presenter.FrequencyPresenter
 import com.cosmos.atv.model.Frequency
 import utils.Constants
+import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity(), FrequencyContract.View {
 
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity(), FrequencyContract.View {
                 frequencyPresenter.onButtonClickOn()
             } else {
                 frequencyPresenter.onButtonClickOff()
+                this.updateFrequency(Frequency(), 0.0, 0, Constants.Position.CENTER)
             }
 
         }
@@ -107,7 +109,8 @@ class MainActivity : AppCompatActivity(), FrequencyContract.View {
 
     override fun updateFrequency(frequency: Frequency, frequencyValue: Double, color: Int, position: Constants.Position) {
         this.runOnUiThread {
-            textViewFrequency.text = frequencyValue.toString() + "Hz\n" + frequency.frequencyPitch.toString() + "Hz\n"+ frequency.pitch
+            val decimalFormat = DecimalFormat("00.00")
+            textViewFrequency.text = decimalFormat.format(frequencyValue) + "Hz\n" +decimalFormat.format(frequency.frequencyPitch) + "Hz\n"+ frequency.pitch
             textViewFrequencyLeft.setTextColor(color)
             textViewFrequencyRight.setTextColor(color)
             when (position) {

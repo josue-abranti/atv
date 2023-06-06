@@ -7,7 +7,9 @@ object Constants {
     const val CONFIGURACAO_CANAL = AudioFormat.CHANNEL_IN_MONO
     const val FORMATO_AUDIO = AudioFormat.ENCODING_PCM_16BIT
     const val PERMISSION_REQUEST_CODE = 123
-    const val SECONDS_WINDOWS:Long = 1000
+    const val SECONDS_WINDOWS:Long = 500
+    const val LOW_FREQUENCY:Double = 15.0
+    const val HIGH_FREQUENCY:Double = 8.200
 
     enum class Position {
         LEFT,
