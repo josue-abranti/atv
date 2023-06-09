@@ -43,9 +43,9 @@ class FrequencyPresenter(view: FrequencyContract.View, context: Context) : Frequ
     override fun receiveFrequencyData(frequency: Double) {
         val frequencyResult: Frequency? = frequencyModel?.getPitchByFrequency(frequency)
         if (frequencyResult != null) {
-            if(frequency.compareTo(frequency) == -1) {
+            if(frequencyResult.compareTo(frequency) == 1) {
                 view!!.updateFrequency(frequencyResult, frequency, fontColor(frequency.toFloat()), Constants.Position.LEFT)
-            } else if(frequency.compareTo(frequency) == 1) {
+            } else if(frequencyResult.compareTo(frequency) == -1) {
                 view!!.updateFrequency(frequencyResult, frequency, fontColor(frequency.toFloat()), Constants.Position.RIGHT)
             } else {
                 view!!.updateFrequency(frequencyResult, frequency, 0, Constants.Position.CENTER)

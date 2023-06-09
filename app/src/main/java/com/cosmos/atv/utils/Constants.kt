@@ -9,7 +9,7 @@ object Constants {
     const val PERMISSION_REQUEST_CODE = 123
     const val SECONDS_WINDOWS:Long = 500
     const val LOW_FREQUENCY:Double = 15.0
-    const val HIGH_FREQUENCY:Double = 8.200
+    const val HIGH_FREQUENCY:Double = 8200.0
 
     enum class Position {
         LEFT,

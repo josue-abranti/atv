@@ -78,7 +78,7 @@ class AudioService {
                 //val frequency = fftModel.calculateFundamentalFrequency(buffer, sampleRate)
                 val frequency = yinModel.detectPitch(buffer, sampleRate, bufferSize)
 
-                callback!!.onAudioDataReceived(frequency)
+                if(frequency < Constants.HIGH_FREQUENCY && frequency > Constants.LOW_FREQUENCY) callback!!.onAudioDataReceived(frequency)
 
                 seconds++
                 Thread.sleep(Constants.SECONDS_WINDOWS)

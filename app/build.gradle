@@ -50,7 +50,6 @@ dependencies {
 
     implementation 'io.realm.kotlin:library-base:1.8.0' // Add to use local realm (no sync)
     implementation 'io.realm.kotlin:library-sync:1.8.0'// Add to use Device Sync
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
 
     implementation 'com.github.wendykierp:JTransforms:3.1'
 
