@@ -1,6 +1,6 @@
 package com.cosmos.atv.model
 
-import org.jtransforms.fft.DoubleFFT_1D
+//  import org.jtransforms.fft.DoubleFFT_1D
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.atan2
@@ -22,8 +22,8 @@ class FFTModel() {
         }
 
         // Realizar a transformada de Fourier
-        val fft = DoubleFFT_1D(bufferSize.toLong())
-        fft.realForward(buffer)
+        //val fft = DoubleFFT_1D(bufferSize.toLong())
+        //fft.realForward(buffer)
 
         // Encontrar o índice do pico dominante na resposta da FFT
         val peakIndex = findPeakIndex(buffer)

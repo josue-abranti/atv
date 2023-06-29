@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity(), FrequencyContract.View {
 
     override fun updateFrequency(frequency: Frequency, frequencyValue: Double, color: Int, position: Constants.Position) {
         this.runOnUiThread {
-            val decimalFormat = DecimalFormat("00.00")
+            val decimalFormat = DecimalFormat("00.0")
             textViewFrequency.text = decimalFormat.format(frequencyValue) + "Hz\n" +decimalFormat.format(frequency.frequencyPitch) + "Hz\n"+ frequency.pitch
             textViewFrequencyLeft.setTextColor(color)
             textViewFrequencyRight.setTextColor(color)

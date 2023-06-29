@@ -9,6 +9,11 @@ class RealmModel {
 
     var idFrequency: Long = 0
 
+    /**
+
+    Descrição do elemento documentado.
+    @return Descrição do valor de retorno.
+     */
     object RealmConfig {
         val config: RealmConfiguration = RealmConfiguration.Builder(setOf(Frequency::class)).build()
     }
@@ -35,7 +40,7 @@ class RealmModel {
 
         val realm = Realm.open(RealmConfig.config)
 
-        val frequencyResult: RealmResults<Frequency> = realm.query<Frequency>("frequencyMin < $0 AND frequencyMax > $0", frequency).find()
+        val frequencyResult: RealmResults<Frequency> = realm.query<Frequency>("frequencyMin < $0 AND frequencyMax >= $0", frequency).find()
 
         return if(frequencyResult.isEmpty()) Frequency()
         else frequencyResult[0]

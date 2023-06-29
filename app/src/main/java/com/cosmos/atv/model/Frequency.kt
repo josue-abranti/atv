@@ -13,9 +13,11 @@ open class Frequency : RealmObject {
     var frequencyMax: Double = 0.0
 
     operator fun compareTo(other: Double): Int {
+        val frequencyPitchRounded = Math.round(frequencyPitch * 10.0) / 10.0
+        val otherRounded = Math.round(other * 10.0) / 10.0
         return when {
-            frequencyPitch < other -> -1
-            frequencyPitch > other -> 1
+            frequencyPitchRounded < otherRounded -> -1
+            frequencyPitchRounded > otherRounded -> 1
             else -> 0
         }
     }

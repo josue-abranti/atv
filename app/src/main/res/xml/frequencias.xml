@@ -358,7 +358,7 @@
         <element>
             <nota>B4</nota>
             <frequenciaMinima>480.02</frequenciaMinima>
-            <frequenciaNota>493.88</frequenciaNota>
+                <frequenciaNota>493.88</frequenciaNota>
             <frequenciaMaxima>508.565</frequenciaMaxima>
         </element>
         <element>

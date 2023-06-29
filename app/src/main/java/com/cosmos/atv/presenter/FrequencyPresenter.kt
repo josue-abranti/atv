@@ -41,20 +41,21 @@ class FrequencyPresenter(view: FrequencyContract.View, context: Context) : Frequ
     }
 
     override fun receiveFrequencyData(frequency: Double) {
+        val frequencyRounded = Math.round(frequency * 10.0) / 10.0
         val frequencyResult: Frequency? = frequencyModel?.getPitchByFrequency(frequency)
         if (frequencyResult != null) {
             if(frequencyResult.compareTo(frequency) == 1) {
-                view!!.updateFrequency(frequencyResult, frequency, fontColor(frequency.toFloat()), Constants.Position.LEFT)
+                view!!.updateFrequency(frequencyResult, frequencyRounded, fontColor(frequencyRounded.toFloat()), Constants.Position.LEFT)
             } else if(frequencyResult.compareTo(frequency) == -1) {
-                view!!.updateFrequency(frequencyResult, frequency, fontColor(frequency.toFloat()), Constants.Position.RIGHT)
+                view!!.updateFrequency(frequencyResult, frequencyRounded, fontColor(frequencyRounded.toFloat()), Constants.Position.RIGHT)
             } else {
-                view!!.updateFrequency(frequencyResult, frequency, 0, Constants.Position.CENTER)
+                view!!.updateFrequency(frequencyResult, frequencyRounded, 0, Constants.Position.CENTER)
             }
         }
     }
 
     private fun fontColor(percentage: Float): Int {
-        return Utils.rgbToColorHex(percentage, percentage, percentage)
+        return Utils.rgbToColorHex((1.0F - percentage), percentage, 0.0F)
     }
 
     override fun startRecording(context: Context) {

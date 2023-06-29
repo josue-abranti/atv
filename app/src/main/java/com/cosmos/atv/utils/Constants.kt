@@ -3,7 +3,9 @@ package utils
 import android.media.AudioFormat
 
 object Constants {
-    const val TAXA_AMOSTRAGEM = 44100
+    const val TAXA_AMOSTRAGEM = 88200
+    const val THRESHOLD = 0.01
+    const val PROBABILITY_THRESHOLD = 0.95
     const val CONFIGURACAO_CANAL = AudioFormat.CHANNEL_IN_MONO
     const val FORMATO_AUDIO = AudioFormat.ENCODING_PCM_16BIT
     const val PERMISSION_REQUEST_CODE = 123
